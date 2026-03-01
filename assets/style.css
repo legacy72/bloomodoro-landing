@@ -1,0 +1,232 @@
+/* Design tokens */
+:root {
+  --bg: #FAF7F2;
+  --accent: #6A9E6F;
+  --accent-dark: #4E7A53;
+  --text: #2D2D2D;
+  --text-muted: #7A7A7A;
+  --card-bg: #FFFFFF;
+  --radius: 16px;
+  --max-width: 860px;
+}
+
+/* Reset */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Layout */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header */
+header {
+  padding: 24px 0;
+  text-align: center;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent-dark);
+}
+
+header .logo img {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 64px 0 80px;
+}
+
+.hero img {
+  width: 120px;
+  height: 120px;
+  border-radius: 26px;
+  box-shadow: 0 8px 32px rgba(106, 158, 111, 0.25);
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--accent-dark);
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 36px;
+}
+
+.btn-appstore {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.btn-appstore:hover { background: var(--accent-dark); }
+
+/* Features */
+.features {
+  padding: 64px 0;
+}
+
+.features h2, .how h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+  color: var(--accent-dark);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.feature-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.feature-card .icon { font-size: 2.4rem; margin-bottom: 16px; }
+.feature-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+.feature-card p { font-size: 0.95rem; color: var(--text-muted); }
+
+/* How it works */
+.how {
+  padding: 64px 0;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px 0;
+  position: relative;
+}
+
+.step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 19px;
+  top: 52px;
+  width: 2px;
+  height: calc(100% - 32px);
+  background: #D4E8D5;
+}
+
+.step-num {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 800;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-text h3 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+.step-text p { font-size: 0.9rem; color: var(--text-muted); }
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  border-top: 1px solid #EAE5DE;
+}
+
+footer a {
+  color: var(--accent-dark);
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+footer a:hover { text-decoration: underline; }
+footer .sep { margin: 0 4px; }
+
+/* Inner pages */
+.page-content {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 64px 24px;
+}
+
+.page-content h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent-dark);
+  margin-bottom: 8px;
+}
+
+.page-content .updated {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+}
+
+.page-content h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 32px 0 10px;
+  color: var(--text);
+}
+
+.page-content p, .page-content li {
+  font-size: 0.97rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.page-content ul { padding-left: 20px; }
+
+.faq-item { margin-bottom: 28px; }
+.faq-item h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+
+/* Responsive */
+@media (max-width: 600px) {
+  .hero h1 { font-size: 2rem; }
+  .feature-grid { grid-template-columns: 1fr; }
+}
